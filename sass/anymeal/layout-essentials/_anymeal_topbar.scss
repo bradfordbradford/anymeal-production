@@ -1,0 +1,52 @@
+
+
+
+
+
+
+// ----------------------------
+// AnyMeal Topbar
+// ----------------------------
+
+
+
+
+.top-bar {
+
+	// Logo
+	// ----
+	li.name {
+		h1 {
+			font-size: 24px;
+			letter-spacing: .1em;
+		}
+	}
+	
+	
+	// Nav Items
+	// ---------
+	ul.nav-items {
+		
+		float:right;
+		background: none;
+
+		li {
+			margin: 38px 33.33333px 0;
+
+			a {
+				text-transform: uppercase;
+				font-weight: 200;
+				font-family: $sans-serif;
+				border-bottom: 1px solid white;
+				padding: 0;
+				line-height: emCalc(22px);
+				letter-spacing: .1em;
+
+				&:hover {
+					color: $grey;
+					border-color: $grey;
+				}
+			}
+		}
+	}
+}

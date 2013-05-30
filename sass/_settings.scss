@@ -25,9 +25,15 @@ $em-base: 16px !default;
 
 // $default-float: left;
 
+
+// Font Families
+// --------------
+$sans-serif: 		"brandon-grotesque";
+$serif: 			"ff-tisa-web-pro";
+
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "ff-tisa-web-pro",  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -123,7 +129,7 @@ $em-base: 16px !default;
 
 // Heading font styles
 
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: "brandon-grotesque", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1157,11 +1163,11 @@ $em-base: 16px !default;
 
 // Background color for the top bar
 
-// $topbar-bg: #111;
+$topbar-bg: #000;
 
 // Height and margin
 
-// $topbar-height: 45px;
+$topbar-height: 100px;
 // $topbar-margin-bottom: emCalc(30px);
 
 // Input height for top bar
@@ -1191,7 +1197,7 @@ $em-base: 16px !default;
 
 // Top menu icon styles
 
-// $topbar-menu-link-transform: uppercase;
+$topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #fff;
@@ -1204,3 +1210,15 @@ $em-base: 16px !default;
 // $topbar-transition-speed: 300ms;
 // $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width: "#{$topbar-breakpoint}")";
+
+
+// Colors
+// ------
+$black: 			#000;
+$white: 			#fff;
+$grey: 				#a7a9ac;
+$dark-grey: 		#636567;
+
+
+
+

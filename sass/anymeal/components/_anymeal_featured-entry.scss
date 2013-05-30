@@ -1,0 +1,61 @@
+
+
+
+
+
+
+// ----------------------
+// AnyMeal Featured Entry
+// ----------------------
+.featured-entry {
+
+
+	// Banner
+	// ------
+	.banner {
+		background: $black;
+		padding: 32px; 
+		color: $white;
+		width: 100%;
+
+		// Grid
+		.inner {
+			@include grid-row();
+		}
+		
+		// Meta
+		// -------
+		.meta {
+			font-style: italic;
+			font-size: emCalc(14px);
+			@extend .large-3;
+			@extend .column;
+
+			h2 {
+				color: $white;
+				font-size: emCalc(24px);
+			}
+
+			.occupation {
+				color: $grey;
+				margin: 10px 0;
+			}
+		}
+		
+		// Content
+		// -------
+		.content {
+			@extend .large-9;
+			@extend .column;
+
+			p {
+				font-style: italic;
+			}
+		}
+
+		hr {
+			border-color: $white;
+		}
+	}
+}
+

@@ -1,0 +1,64 @@
+
+
+
+
+
+
+// ----------------------------
+// AnyMeal Meal Entry
+// ----------------------------
+
+
+
+
+article.entry {	
+
+	@include grid-row();
+	margin: 80px auto;
+
+	// Meal Intro
+	// ----------
+	.intro {
+		@extend .large-12;
+		@extend .column;
+		margin-bottom: 40px;
+
+		.main-photo {
+			@extend .large-6;
+			@extend .column;
+			margin-bottom: 12px;
+		}
+
+		.content {
+			@extend .large-5;
+			@extend .column;
+			float: right;
+			width: 43.3%;
+
+			@include breakpoint(tablet-V) {
+				width: auto;
+				float: none;
+			}
+		}
+
+		// Meta
+		// -----
+		.meta {
+			margin: 14px 0 24px;
+		}
+	}	
+
+	// Meal Photos
+	.photos {
+		@include grid-row();
+
+		figure {
+			@extend .large-12;
+			@extend .column;
+			margin: 20px 0;
+		}
+	}
+}
+
+
+

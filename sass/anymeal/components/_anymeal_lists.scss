@@ -1,0 +1,46 @@
+
+
+
+
+
+
+// --------------
+// AnyMeal Lists
+// --------------
+
+
+
+
+// Meal/Entry List with Photos 
+ul.entry-list {
+  
+  // Grid
+  // ----
+  @include grid-row();
+  margin: 40px auto;
+  
+  li {
+    list-style:none;
+    @extend .large-3;
+    @extend .column;
+    margin: 0 0 30px 0;
+  }
+
+  // Header
+  h5 {
+    margin: 20px auto 40px;
+    text-align:center;
+  }
+
+  // More Button
+  .list-options {
+    @extend .small-1;
+    @include grid-row();
+    margin: 60px auto 30px;
+    text-align: center;
+    
+      .btn {
+        display: inline-block;
+      }
+  }
+}

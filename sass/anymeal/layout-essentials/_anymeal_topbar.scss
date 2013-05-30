@@ -13,25 +13,48 @@
 
 .top-bar {
 
+	margin-bottom: 0;
+
+	// Title Area
+	.title-area {
+		margin-left: 7.5em;
+	}
+
 	// Logo
 	// ----
 	li.name {
 		h1 {
 			font-size: 24px;
 			letter-spacing: .1em;
+
+			span {
+				font-family: $serif;
+				font-size: 10px;
+				font-style: italic;
+				text-transform: none;
+				display: inline-block;
+				top: -2px;
+				position: relative;
+				text-indent: 16px;
+			}
 		}
 	}
 	
 	
 	// Nav Items
 	// ---------
-	ul.nav-items {
+	.top-bar-section  ul.nav-items {
 		
 		float:right;
-		background: none;
+		margin-right: 7.5em;
+
+		li > a {
+			background: $black;
+		}
 
 		li {
-			margin: 38px 33.33333px 0;
+			padding: 38px 33.33333px 24px;
+			background: $black;
 
 			a {
 				text-transform: uppercase;
@@ -39,14 +62,51 @@
 				font-family: $sans-serif;
 				border-bottom: 1px solid white;
 				padding: 0;
-				line-height: emCalc(22px);
+				line-height: emCalc(26px);
 				letter-spacing: .1em;
 
 				&:hover {
 					color: $grey;
 					border-color: $grey;
+					background:none;
 				}
 			}
 		}
+	}
+
+	// Mobile Menu Toggle
+	// -------------------
+	.toggle-topbar.menu-icon {
+		a {
+			text-indent: -54px;
+			font-family: $sans-serif;
+		}
+	}
+
+
+	// Mobile Settings
+	// ---------------
+	@include breakpoint(tablet-H) {
+		.title-area, .top-bar-section ul.nav-items {
+			margin: 0;
+		}
+	}
+
+	@include breakpoint(tablet-V) {
+
+		// Title Area
+		.title-area {
+			border-bottom:1px solid $dark-grey;
+			// margin-left: 0;
+		}
+
+		// Nav Items List
+		.top-bar-section  ul.nav-items {
+			// margin-right: 0;
+		}
+		.top-bar-section ul.nav-items li, .top-bar-section ul.nav-items li > a {
+			background: lighten($black, 10%);
+		}
+		
 	}
 }

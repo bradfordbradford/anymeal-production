@@ -9,6 +9,8 @@
 // ----------------------------
 
 
+
+
 // Links
 // -----
 a {
@@ -22,3 +24,31 @@ a {
 h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase !important;
 }
+
+// Horizontal Rules
+// ----------------
+hr {
+	width: 50px;
+	border-width: 2px 0 0;
+	border-color: #000;
+}
+
+
+// Special Class
+.lighten {
+	h1, h2, h3, h4, h5, h6, hr, p {
+		color: lighten($black, 70%);
+		border-color: lighten($black, 70%);
+	}
+}
+
+
+// Selection Text
+// ---------------
+::-moz-selection{text-shadow: none;background-color: darken($white, 10%); color: $black;}
+::selection {text-shadow: none;background-color: darken($white, 10%); color: $black;}
+
+
+
+
+

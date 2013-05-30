@@ -15,7 +15,7 @@ footer#site-footer {
 
 	background: $dark-grey;
 	padding: 10px;
-	border-bottom: 6px solid $black;
+	border-bottom: 16px solid $black;
 	margin: 40px 0 0;
 	
 	// Lists
@@ -50,16 +50,19 @@ footer#site-footer {
 	// --------------
 	.inner {
 		@include grid-row;
+
 		margin-top: 48px;
 	}
 	.footer-column {
-		@include grid-column(3);
+		// @include grid-column(3);
+		@extend .large-3;
+		@extend .column;
 	}
 
 	// Footnote
 	// --------
 	.footnote {
-		@include grid-row;		
+		@include grid-row();		
 		@include grid-column(3);
 		clear: both;
 		float:none;

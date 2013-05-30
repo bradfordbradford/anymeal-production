@@ -13,6 +13,7 @@
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
 
+
 @import "foundation/components/global"; // *always required
 @import "foundation/components/grid";
 // @import "foundation/components/visibility";
@@ -57,13 +58,26 @@
 // ----------------------------
 
 // Layout Essentials
+// -----------------
+@import "anymeal/layout-essentials/anymeal_breakpoints";		// Breakpoints
 @import "anymeal/layout-essentials/anymeal_typography";			// Typography
 @import "anymeal/layout-essentials/anymeal_topbar";				// Top-Bar
 @import "anymeal/layout-essentials/anymeal_footer";				// Footer
 
 
+// Special Layouts
+// -----------------
 
 
+
+
+// Components
+// -----------------
+@import "anymeal/components/anymeal_buttons";					// Buttons
+@import "anymeal/components/anymeal_meal-entry";				// Meal Entry
+@import "anymeal/components/anymeal_featured-entry";						// Featured Entry
+@import "anymeal/components/anymeal_photos";					// Photos & Captions
+@import "anymeal/components/anymeal_lists";						// Lists
 
 
 

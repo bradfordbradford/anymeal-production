@@ -1,0 +1,28 @@
+
+
+
+
+
+
+// ---------------
+// AnyMeal Buttons
+// ---------------
+
+
+
+.flat.btn {
+	background: $dark-grey;
+	@include border-radius(20px 20px);
+	padding: 4px 40px;
+	color: $white;
+	font-family: $sans-serif; 
+	font-size: emCalc(13px);
+	letter-spacing: .1em;
+	text-align: center;
+	text-transform:uppercase;
+	@include transition(background .15s ease-in-out, color .15s ease-in-out);
+
+	&:hover {
+		background: $grey;
+	}
+}

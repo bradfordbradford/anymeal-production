@@ -1,4 +1,4 @@
-![image](https://github.com/lindseybradford/anymeal-production/blob/master/images/logo-bw.png)
+![image](https://github.com/lindseybradford/anymeal-production/blob/master/images/logo-bw.png?raw=true)
 =====================
 
 

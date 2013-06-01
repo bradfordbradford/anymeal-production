@@ -955,6 +955,8 @@ table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoo
 .f-dropdown.medium { max-width: 500px; }
 .f-dropdown.large { max-width: 800px; }
 
+.content-wrap { background: white; padding-bottom: 40px; }
+
 a:hover { -webkit-transition: color 0.15s ease-in-out; -moz-transition: color 0.15s ease-in-out; -o-transition: color 0.15s ease-in-out; transition: color 0.15s ease-in-out; }
 
 h1, h2, h3, h4, h5, h6 { text-transform: uppercase !important; }
@@ -981,7 +983,7 @@ hr { width: 50px; border-width: 2px 0 0; border-color: #000; }
 @media (max-width: 768px) { .top-bar .title-area { border-bottom: 1px solid #636567; }
   .top-bar .top-bar-section ul.nav-items li, .top-bar .top-bar-section ul.nav-items li > a { background: #1a1a1a; } }
 
-footer#site-footer { background: #636567; padding: 10px; border-bottom: 16px solid black; margin: 40px 0 0; }
+footer#site-footer { background: #636567; padding: 10px; border-bottom: 16px solid black; }
 footer#site-footer ul li { list-style: none; border-bottom: 1px solid black; padding-bottom: 6px; }
 footer#site-footer a { color: black; font-style: italic; font-size: 0.875em; }
 footer#site-footer a:hover { color: #a7a9ac; }
@@ -1002,7 +1004,8 @@ article.entry { width: 100%; margin-left: auto; margin-right: auto; margin-top: 
 article.entry:before, article.entry:after { content: " "; display: table; }
 article.entry:after { clear: both; }
 article.entry .intro { margin-bottom: 40px; }
-article.entry .intro .main-photo { margin-bottom: 12px; }
+article.entry .intro .main-photo { padding: 0; margin-bottom: 24px; }
+@media (max-width: 768px) { article.entry .intro .main-photo { padding: 0 0.9375em; } }
 article.entry .intro .content { float: right; width: 43.3%; }
 @media (max-width: 768px) { article.entry .intro .content { width: auto; float: none; } }
 article.entry .intro .meta { margin: 14px 0 24px; }

@@ -26,7 +26,12 @@ article.entry {
 		.main-photo {
 			@extend .large-6;
 			@extend .column;
-			margin-bottom: 12px;
+			padding: 0;
+			margin-bottom: 24px;
+
+			@include breakpoint(tablet-V) {
+				padding: 0 0.9375em;
+			}
 		}
 
 		.content {

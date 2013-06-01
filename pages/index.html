@@ -8,8 +8,9 @@
   <meta name="viewport" content="width=device-width" />
   <title>ANYMEAL</title>
 
-  <!-- Le Style   -->
+  <!-- Le Style  -->
   <link rel="stylesheet" href="../stylesheets/app.css" />
+  <link rel="stylesheet" href="../stylesheets/bigvideo.css">
   
   <!-- Modernizr -->
   <script src="../javascripts/vendor/custom.modernizr.js"></script>
@@ -20,6 +21,7 @@
 
 </head>
 <body>
+
 	<!-- ============== -->
 	<!--   Navigation   -->
 	<!-- ============== -->
@@ -167,6 +169,23 @@
   <script src="../javascripts/foundation/foundation.dropdown.js"></script>
   <script>
     $(document).foundation();
+  </script>
+
+  <!-- Video -->
+  <script src="../javascripts/vendor/jquery-ui-1.8.22.custom.min.js"></script>
+  <script src="../javascripts/vendor/jquery.imagesloaded.min.js"></script>
+  <script src="../javascripts/vendor/video.js"></script>
+  <script src="../javascripts/vendor"></script>
+  <script>
+  		$(function() {
+            var BV = new $.BigVideo();
+            BV.init();
+            if (Modernizr.touch) {
+                BV.show('../images/content/hero-placeholder.jpg');
+            } else {
+                BV.show('http://video-js.zencoder.com/oceans-clip.mp4',{ambient:true});
+            }
+        });
   </script>
   
 </body>

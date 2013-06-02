@@ -10,7 +10,11 @@
 
   <!-- Le Style   -->
   <link rel="stylesheet" href="../stylesheets/app.css" />
-  
+  <link href='../stylesheets/mapbox.css' rel='stylesheet' />
+
+  <!--[if lte IE 8]>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.ie.css' rel='stylesheet' >
+  <![endif]-->
   <!-- Modernizr -->
   <script src="../javascripts/vendor/custom.modernizr.js"></script>
 
@@ -19,17 +23,6 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 
-	<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
-	<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
-	<style>
-	body { margin:0; padding:0; }
-	#map { position:absolute; top:0; bottom:0; width:100%; height: 100%; }
-	.map-wrap {
-		position: relative;
-		height: 560px; 
-		overflow: hidden;
-	}
-	</style>
 
 </head>
 <body>
@@ -177,25 +170,98 @@
 
 
   <!-- Mappy Things -->
-  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'></script>
-  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css' rel='stylesheet' />
-  <!--[if lte IE 8]>
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.ie.css' rel='stylesheet' >
-  <![endif]-->
-
+  <script src="../javascripts/mapbox.js"></script>
+  
   <script>
-  // mapbox.auto('map', 'lindseybradford.map-u5x79yri');
-  var map = L.mapbox.map('map', 'lindseybradford.map-u5x79yri', {
-			scrollWheelZoom: false
-		}).setView([-3.365789,36.67445], 6);
-
-  // var map = L.mapbox.map('map', 'lindseybradford.map-u5x79yri', {zoomControl: false});
-
-	// disable drag and zoom handlers
-	map.dragging.disable();
+ 	// MapBox Magic
+  	var map = L.mapbox.map('map', 'lindseybradford.map-u5x79yri', {
+			}).setView([43.068888,-59.089966], 4);
+	// Options
 	map.touchZoom.disable();
 	map.doubleClickZoom.disable();
 	map.scrollWheelZoom.disable();
+
+
+	// Meal Pins
+	var geoJson = [{
+	    type: 'Feature',
+	    "geometry": { "type": "Point", "coordinates": [-77.03, 38.90]},
+	    "properties": {
+	        "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cherry_Blossoms_and_Washington_Monument.jpg/320px-Cherry_Blossoms_and_Washington_Monument.jpg",
+	        "url": "http://en.wikipedia.org/wiki/New_York_City",
+	        "mealTitle": "A meal with Nate Poekert",
+	        "entryDescription": '8-bit cardigan hella, banh mi thundercats DIY mumblecore accusamus pug mollit laboris qui actually.',
+	        "entryPrompt": "Read More &rarr;"
+	    }
+	}, {
+	    type: 'Feature',
+	    "geometry": { "type": "Point", "coordinates": [-87.63, 41.88]},
+	    "properties": {
+	        "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chicago_sunrise_1.jpg/640px-Chicago_sunrise_1.jpg",
+	        "url": "http://en.wikipedia.org/wiki/New_York_City",
+	        "mealTitle": "A meal with Travis Ladue",
+	        "entryDescription": '8-bit cardigan hella, banh mi thundercats DIY mumblecore accusamus pug mollit laboris qui actually.',
+	        "entryPrompt": "Read More &rarr;"
+	    }
+	}, {
+	    type: 'Feature',
+	    "geometry": { "type": "Point", "coordinates": [-74.00, 40.71]},
+	    "properties": {
+	        "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/3/39/NYC_Top_of_the_Rock_Pano.jpg/640px-NYC_Top_of_the_Rock_Pano.jpg",
+	        "url": "http://en.wikipedia.org/wiki/New_York_City",
+	        "mealTitle": "A meal with Collin Hughes",
+	        "entryDescription": '8-bit cardigan hella, banh mi thundercats DIY mumblecore accusamus pug mollit laboris qui actually.',
+	        "entryPrompt": "Read More &rarr;"
+	    }
+	}];
+
+	// Add Meal Pins to the map
+	map.markerLayer.setGeoJSON(geoJson);
+
+	// Cycle through markers once geoJson is ready.
+	// Add custom popups to each using our custom feature properties
+	map.markerLayer.on('ready', function(e) {
+	    this.eachLayer(function(marker) {
+
+	        var feature = marker.feature;
+
+	        // Create custom popup content
+	        var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
+	                                '<img src="' + feature.properties.image + '">' +
+	                            '   <h3>' + feature.properties.mealTitle + '</h3>' +
+	                            '   <p>' + feature.properties.entryDescription + '</p>' +
+	                            '   <span.read-more>' + feature.properties.entryPrompt + '</span>' +
+
+	                            '</a>';
+
+	        // http://leafletjs.com/reference.html#popup
+	        marker.bindPopup(popupContent,{
+	            closeButton: false,
+	            minWidth: 320
+	        });
+
+	    });
+	});
+
+// Open popup when user mouses over a marker
+map.markerLayer.on('ready', function(e) {
+    var markers = [];
+    this.eachLayer(function(marker) { markers.push(marker); });
+    cycle(markers);
+});
+
+// Cycle Markers
+function cycle(markers) {
+    var i = 0;
+    function run() {
+        if (++i > markers.length - 1) i = 0;
+        map.setView(markers[i].getLatLng(), 4);
+        markers[i].openPopup();
+        window.setTimeout(run, 3000);
+    }
+    run();
+}
+	
 </script>
   
 </body>

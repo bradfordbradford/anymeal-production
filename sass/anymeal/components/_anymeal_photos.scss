@@ -16,3 +16,19 @@ figure {
 		color: lighten($black, 50%);
 	}
 }
+
+
+
+// Load Photos
+// -----------
+.loadNow, .loadDelay {
+  display: block;
+  float: left;
+  min-height: 1px;
+}
+
+#loadMore {
+  cursor: pointer;
+}
+
+

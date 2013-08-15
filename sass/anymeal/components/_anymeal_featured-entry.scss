@@ -7,22 +7,50 @@
 // ----------------------
 // AnyMeal Featured Entry
 // ----------------------
+body.home {
+	background: black;
+}
+.featured-wrap {
+	position: relative;
+	z-index: 1;
+}
+
 .featured-entry {
+
+	// Featured Video
+	// ---------------
+	#am-feature-vid, #am-feature-vid_html5_api {
+		width: 100%;
+	}
+
+	#am-feature-vid_html5_api {
+		// margin-top: 100px;
+	}
+
 
 
 	// Banner
 	// ------
 	.banner {
 		background: $black;
-		padding: 32px; 
+		padding: 32px 0;
 		color: $white;
 		width: 100%;
+		clear:both;
+		position: relative;
+		z-index: 1;
+		// margin-top: 76px;
+
+		@include breakpoint(phones) {
+			// margin-top: 0;
+			padding: 12px 0;
+		}
 
 		// Grid
 		.inner {
 			@include grid-row();
 		}
-		
+
 		// Meta
 		// -------
 		.meta {
@@ -41,7 +69,7 @@
 				margin: 10px 0;
 			}
 		}
-		
+
 		// Content
 		// -------
 		.content {

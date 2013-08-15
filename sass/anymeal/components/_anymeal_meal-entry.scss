@@ -9,9 +9,52 @@
 // ----------------------------
 
 
+// Meal Quote
+// ----------
+aside.pullquote {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
 
+	blockquote {
+		font-size: emCalc(30px);
+		position: relative;
+		color: black;
+		font-style: italic;
+		line-height: emCalc(20px);
+		margin-bottom: 24px;
+		border-left: 0;
+		padding: 0;
 
-article.entry {	
+		span.quotemark {
+			font-family: $sans-serif;
+		}
+	}
+
+	cite {
+		font-style: normal;
+		color: darken($dark-grey, 10%);
+		word-spacing: .24em;
+		letter-spacing: .1em;
+		font-size: emCalc(16px);
+		text-transform: uppercase;
+		font-family: $sans-serif;
+	}
+
+	@include breakpoint(tablet-V) {
+		width: 70%;
+
+		blockquote {
+			font-size: emCalc(20px);
+		}
+
+		cite {
+			font-size: emCalc(14px);
+		}
+	}
+}
+
+article.entry {
 
 	@include grid-row();
 	margin: 80px auto;
@@ -51,7 +94,7 @@ article.entry {
 		.meta {
 			margin: 14px 0 24px;
 		}
-	}	
+	}
 
 	// Meal Photos
 	.photos {

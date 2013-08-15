@@ -13,10 +13,13 @@
 
 footer#site-footer {
 
-	background: $dark-grey;
+	background: $white;
 	padding: 10px;
 	border-bottom: 16px solid $black;
-	
+	border-top: 1px solid lighten($black, 70%);
+	position: relative;
+	z-index: 1;
+
 	// Lists
 	// -----
 	ul li {
@@ -31,10 +34,6 @@ footer#site-footer {
 		color: $black;
 		font-style: italic;
 		font-size: emCalc(14px);
-
-		&:hover {
-			color: $grey;
-		}
 	}
 
 	// Headers
@@ -44,13 +43,43 @@ footer#site-footer {
 		padding-bottom: 6px;
 		font-size: emCalc(16px);
 	}
+	.name h1 {
+	  margin:0;
+	  line-height: 10px;
+
+		span {
+		  font-family: $serif;
+		  font-size: 10px;
+		  font-style: italic;
+		  text-transform: none;
+		  display: inline-block;
+		  top: -2px;
+		  position: relative;
+		  text-indent: 16px;
+
+		  @include breakpoint(tablet-V) {
+		  	display: none;
+		  }
+		}
+
+	  	a {
+		  font-size: 24px;
+		  letter-spacing: .1em;
+		  color:lighten($black, 70%);
+		  font-style: normal;
+
+		  &:hover {
+			color:#636567;
+		  }
+		}
+	}
 
 	// Footer Grid
 	// --------------
 	.inner {
 		@include grid-row;
 
-		margin-top: 48px;
+		margin:20px auto;
 	}
 	.footer-column {
 		// @include grid-column(3);
@@ -58,17 +87,68 @@ footer#site-footer {
 		@extend .column;
 	}
 
+	.footer-right {
+		float: right;
+	}
+
+	.footer-left {
+		float: left;
+	}
+
+	.footer-left, .footer-right {
+	  display: inline-block;
+
+	  @include breakpoint(tablet-V) {
+	  	float: none;
+		display: block;
+		text-align: center;
+		margin: 0 auto 12px;
+	  }
+	}
+
+
+
+
+	// Social
+	// ------
+	ul.social {
+	  margin:0;
+	  color:lighten($black, 70%);
+
+		li {
+			display: inline-block;
+			@include border-radius(6px 6px);
+			line-height: emCalc(16px);
+			border-bottom:0;
+			margin: 0 4px;
+			@include transition(background .15s ease-in-out);
+
+			a {
+				display: inline-block;
+				font-size: emCalc(16px);
+				color: lighten($black, 70%);
+				text-align: center;
+
+				&:hover {
+					color:#636567;
+				}
+			}
+
+		}
+	}
+
+
 	// Footnote
 	// --------
 	.footnote {
-		@include grid-row();		
+		@include grid-row();
 		@include grid-column(3);
 		clear: both;
 		float:none;
 		text-align:center;
 		padding: 40px 0 34px;
 
-		// Header 
+		// Header
 		h4 {
 			font-weight: 400;
 		}

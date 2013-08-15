@@ -176,6 +176,7 @@
           var first = $this.children(self.settings.region_selector).first();
 
           if (settings.one_up || !self.small($this)) {
+            // Removed in line below: first.addClass('active');
             first.addClass('active');
           }
 

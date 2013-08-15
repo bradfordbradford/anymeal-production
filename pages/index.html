@@ -8,18 +8,18 @@
   <title>ANYMEAL</title>
 
   <!-- Le Style  -->
-  <!-- <link rel="stylesheet" href="../stylesheets/app.css" /> -->
-  <link rel="stylesheet" href="../stylesheets/bigvideo.css">
+  <link rel="stylesheet" href="../stylesheets/app.css" />
+
 
   <!-- Modernizr -->
   <script src="../javascripts/vendor/custom.modernizr.js"></script>
-“highlight_line”: true,
+
   <!-- Telegraph Typekit -->
   <script type="text/javascript" src="//use.typekit.net/bxp3cpo.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 </head>
-<body>
+<body class="home">
 
 	<!-- ============== -->
 	<!--   Navigation   -->
@@ -41,72 +41,79 @@
       </section>
     </nav>
 
+
 	<!-- ============== -->
 	<!--     Content    -->
 	<!-- ============== -->
+    <div class="content-wrap">
 
-	<div class="featured-entry">
-		<img src="../images/content/hero-placeholder.jpg" alt="">
-		<div class="banner">
-			<div class="inner">
-				<div class="meta">
-					A meal with:
-					<h2>Erik Marinovich</h2>
-					<h6 class="occupation">Letterer</h6>
-					<span class="location">Phoenix, AZ</span> — <span class="date">1/25/13</span>
-				</div>
+    	<div class="featured-wrap">
+            <div class="featured-entry">
+                <video id="am-feature-vid" class="video-js vjs-default-skin" autoplay="true" poster="http://www.beta.anymeal.com/workspace//photos/20130529-japan-genta-0138-head-51fc72b77cc9a.jpg" loop="true" preload="auto" data-setup="">
+                  <source src="http://www.beta.anymeal.com/workspace//videos/genta_cropped-51fc7206ae508.mov" type="video/mp4"></source>
+                </video>
+        		<div class="banner">
+        			<div class="inner">
+        				<div class="meta">
+        					A meal with:
+        					<h2>Erik Marinovich</h2>
+        					<h6 class="occupation">Letterer</h6>
+        					<span class="location">Phoenix, AZ</span> — <span class="date">1/25/13</span>
+        				</div>
 
-				<div class="content">
-					<p>Helvetica pork belly eiusmod raw denim Godard you probably haven't heard of them iPhone mlkshk occaecat four loko, flexitarian sunt tattooed. Labore +1 tempor Truffaut, freegan letterpress photo booth. Jean shorts voluptate PBR, church-key aesthetic sint tattooed.</p>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
+        				<div class="content">
+        					<p>Helvetica pork belly eiusmod raw denim Godard you probably haven't heard of them iPhone mlkshk occaecat four loko, flexitarian sunt tattooed. Labore +1 tempor Truffaut, freegan letterpress photo booth. Jean shorts voluptate PBR, church-key aesthetic sint tattooed.</p>
+        					<hr>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
 
-	<ul class="entry-list">
-		<div class="row">
-			<h5>Latest Meals</h5>
+    	<ul class="entry-list">
+    		<div class="row">
+    			<h5>Latest Meals</h5>
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
 
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
 
-			<li>
-				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
-			</li>
-		</div>
+    			<li>
+    				<a href="#"><img src="../images/content/placeholder-3.jpg" alt="" /></a>
+    			</li>
+    		</div>
 
-		<div class="list-options">
-			<a href="#" class="flat btn">More</a>
-		</div>
-	</ul>
+    		<div class="list-options">
+    			<a href="#" class="flat btn">More</a>
+    		</div>
+    	</ul>
 
+    </div>
 
 
 	<!-- ============== -->
@@ -174,18 +181,29 @@
   <script src="../javascripts/vendor/jquery-ui-1.8.22.custom.min.js"></script>
   <script src="../javascripts/vendor/jquery.imagesloaded.min.js"></script>
   <script src="../javascripts/vendor/video.js"></script>
-  <script src="../javascripts/vendor"></script>
+  <!-- // <script src="http://vjs.zencdn.net/c/video.js"></script> -->
+  <script type="text/javascript">
+                // Once the video is ready
+                _V_("am-feature-vid").ready(function(){
+
+                var myPlayer = this;    // Store the video object
+                var aspectRatio = 9/21; // Make up an aspect ratio
+
+                function resizeVideoJS(){
+                  // Get the parent element's actual width
+                  var width = document.getElementById(myPlayer.id).parentElement.offsetWidth;
+                  // Set width to fill parent element, Set height
+                  myPlayer.width(width).height( width * aspectRatio );
+                }
+
+                // Create Ambience
+                myPlayer.volume(0);
+
+                resizeVideoJS(); // Initialize the function
+                window.onresize = resizeVideoJS; // Call the function on resize
+                });
+              </script>
   <script>
-  		$(function() {
-            var BV = new $.BigVideo();
-            BV.init();
-            if (Modernizr.touch) {
-                BV.show('../images/content/hero-placeholder.jpg');
-            } else {
-                BV.show('http://video-js.zencoder.com/oceans-clip.mp4',{ambient:true});
-            }
-        });
-  </script>
 
 </body>
 </html>

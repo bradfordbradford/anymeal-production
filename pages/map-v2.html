@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class=" no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="A collection of people who I have the privilege to share a meal and good conversation with." />
+    <title>AnyMeal — Map</title>
+    <link rel="icon" type="images/png" href="http://www.beta.anymeal.com/workspace/favicon/avatar_fb9973694ead_16-51b2241548871.png" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="http://www.beta.anymeal.com/workspace/stylesheets/app.css" /> -->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/app.css" />
+
+
+
+<!--[if lte IE 8]><link href='http://www.beta.anymeal.com/workspace/stylesheets/ie.css' rel='stylesheet'/><![endif]-->
+    <script src="http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js"></script>
+    <link href="http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css" rel="stylesheet" />
+<!--[if lte IE 8]><link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.ie.css' rel='stylesheet'/><![endif]-->
+    <script src="http://www.beta.anymeal.com/workspace/javascripts/vendor/custom.modernizr.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/vct3qqz.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body class="map">
+    <div class="site-wrap">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="http://www.beta.anymeal.com/home">ANYMEAL <span>A project by Collin Hughes</span></a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon">
+            <a href="#">
+              <span>Menu</span>
+            </a>
+          </li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="nav-items">
+            <li>
+              <a href="http://www.beta.anymeal.com/home/">Home</a>
+            </li>
+            <li>
+              <a href="http://www.beta.anymeal.com/about/">About</a>
+            </li>
+            <li class="active">
+              <a href="http://www.beta.anymeal.com/map/">Map</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+      <div class="content-wrap">
+        <div class="map-wrap">
+          <div id="map"></div>
+        </div>
+
+
+
+
+        <div href="{$root}/map" class="view-all">
+          Selected: <a href="#">July 2010</a>
+        </div>
+
+        <div class="sort-wrap">
+          <ul class="sort-list">
+              <div class="inner">
+
+                <div class="section-container" data-section="horizontal-nav" data-options="one_up: false;" data-section-resized="true">
+                  <section>
+
+                    <h5 class="title" data-section-title=""><a href="#panel1">Time</a></h5>
+
+                    <div class="content" data-section-content="">
+                      <ul>
+                        <li><a href="#">July 2010</a></li>
+                        <li><a href="#">August 2010</a></li>
+                        <li><a href="#">September 2010</a></li>
+                        <li><a href="#">January 2013</a></li>
+                      </ul>
+                    </div>
+                  </section>
+
+                  <section>
+
+                    <h5 class="title" data-section-title=""><a href="#panel2">Place</a></h5>
+
+                    <div class="content" data-section-content="">
+                      <ul>
+                        <li class="active"><a href="#">North America</a></li>
+                        <li><a href="#">South America</a></li>
+                        <li><a href="#">Eastern Europe</a></li>
+                        <li><a href="#">United Kingdom</a></li>
+                      </ul>
+                    </div>
+                  </section>
+
+                  <section>
+
+                    <h5 class="title" data-section-title=""><a href="#panel3">Craft</a></h5>
+
+                    <div class="content" data-section-content="">
+                      <ul>
+                        <li><a href="#">Writer</a></li>
+                        <li><a href="#">Painter</a></li>
+                        <li><a href="#">September</a></li>
+                        <li><a href="#">Designer</a></li>
+                      </ul>
+                    </div>
+                  </section>
+
+                  <section>
+
+                    <h5 class="title" data-section-title=""><a href="#panel4">Meal</a></h5>
+
+                    <div class="content row" data-section-content="">
+                      <ul>
+                        <li><a href="#">Breakfast</a></li>
+                        <li><a href="#">Lunch</a></li>
+                        <li><a href="#">Dinner</a></li>
+                        <li><a href="#">Drinks</a></li>
+                      </ul>
+                    </div>
+                  </section>
+                </div>
+
+<!--
+
+                <div class="list-column" data-dropdown="drop1">
+                  <h5>Time</h5>
+                </div>
+
+                <div class="list-column" data-dropdown="drop2">
+                  <h5>Place</h5>
+                </div>
+
+                <div class="list-column" data-dropdown="drop3">
+                  <h5>Craft</h5>
+                </div>
+
+                <div class="list-column" data-dropdown="drop4">
+                  <h5>Meal</h5>
+                </div>
+
+
+                <ul id="drop1" class="f-dropdown content" data-dropdown-content>
+                  <li><a href="#">July 2013</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                </ul>
+
+                <ul id="drop2" class="f-dropdown content" data-dropdown-content>
+                  <li><a href="#">Austin, TX</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                </ul>
+
+                <ul id="drop3" class="f-dropdown content" data-dropdown-content>
+                  <li><a href="#">Writer</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                </ul>
+
+                <ul id="drop4" class="f-dropdown content" data-dropdown-content>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                  <li><a href="#">Drinks</a></li>
+                  <li><a href="#">This is another</a></li>
+                  <li><a href="#">Yet another</a></li>
+                </ul>
+            </div> -->
+          </ul>
+        </div>
+
+        <ul class="entry-list">
+          <h5>Meals</h5>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/nick-fay">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Nick Fay</div>
+                    <hr />
+                    <div class="location">Spring Green, WI</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/20130607-anymeal-nickfay-0003-51e47ccf65e76.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/jeff-raider">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Jeff Raider</div>
+                    <hr />
+                    <div class="location">New York, NY</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/20130702-anymeal-jeffraider-ol-51e440886e076.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/noah-emrich">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Noah Emrich</div>
+                    <hr />
+                    <div class="location">New York, NY</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/anymeal001-51ccde1689b9b.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/arvid-bayev">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Arvid Bayev</div>
+                    <hr />
+                    <div class="location">Xlendi, Gozo Malta</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/tumblr_m8ynnlw2ta1rqxuhno1_500-51ae8eded6357.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/jeannie-miskovich">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Jeannie Miskovich</div>
+                    <hr />
+                    <div class="location">Pāhoa, HI</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/tumblr_mciiurycc91rqxuhno1_500-51ae8ec36fe13.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/vicky">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Vicky</div>
+                    <hr />
+                    <div class="location">London, England</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/tumblr_m5664zkox41rqxuhno1_500-51ae8f1f7c4f1.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/laurent-sarlette">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Laurent Sarlette</div>
+                    <hr />
+                    <div class="location">Antarctica</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/tumblr_mezlqgwokd1rqxuhno1_500-51ae8e8d73716.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/genta-narita">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Genta Narita</div>
+                    <hr />
+                    <div class="location">Tokyo, Japan</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/genta-anymeal-001-51ccdf3ae1658.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/robert-babar">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Robert Babar</div>
+                    <hr />
+                    <div class="location">Angel, London</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/tumblr_md5575eed01rqxuhno1_500-51ae8eae40963.jpg" />
+          </li>
+          <li>
+            <a href="http://www.beta.anymeal.com/with/spencer-and-alex-combs">
+              <div class="title-cover-wrap">
+                <div class="content-v-center">
+                  <div class="title-content">
+                    <div class="title">Spencer and Alex Combs</div>
+                    <hr />
+                    <div class="location">New York, NY</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <img class="loadNow" src="http://www.beta.anymeal.com/workspace/images/loader.gif" data-original="http://www.beta.anymeal.com/workspace//photos/tumblr_mezqwdhqjh1rqxuhno1_500-51ae5d4ff1d8b.jpg" />
+          </li>
+        </ul>
+      </div>
+      <footer id="site-footer">
+        <div class="inner">
+          <div class="footer-left">
+            <ul class="social"><li><a href="#">Twitter</a></li>
+                        / <li><a href="#">Facebook</a></li></ul>
+          </div>
+          <div class="footer-right">
+            <div class="name">
+              <h1>
+                <a href="http://www.beta.anymeal.com/home"><span>A project by Collin Hughes</span> ANYMEAL</a>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+
+
+  <script src="http://www.beta.anymeal.com/workspace/javascripts/foundation/foundation.anymeal.min.js"></script>
+
+  <script src="../javascripts/foundation/foundation.section-ck.js"></script>
+  <script>
+
+  // $(document).foundation('on');
+  </script>
+  <script src="http://www.beta.anymeal.com/workspace/javascripts/vendor/lazyload.js"></script>
+  <script type="text/javascript" charset="utf-8">
+          $(function() {
+              $("img.loadNow").lazyload({
+                  effect : "fadeIn",
+              });
+
+              $('#loadMore').click(function() {
+                $("img.loadDelay").lazyload({
+                    effect : "fadeIn"
+                });
+                $(this).hide();
+              });
+
+
+          });
+      </script>
+  <script>
+        $(document).foundation();
+    </script>
+  <script>
+
+        var map = L.mapbox.map('map', 'lindseybradford.map-wh2iqiwu');
+        map.touchZoom.disable();
+
+        map.setView([38.68551,-39.402466], 3);
+
+        map.scrollWheelZoom.disable();
+
+        // Filter Meal Pins ------
+
+
+        // Hey there isn't a filter!
+        var geoJson = [
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [-74.0059731, 40.7143528]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/tumblr_mezqwdhqjh1rqxuhno1_500-51ae5d4ff1d8b.jpg",
+                "url": "http://www.beta.anymeal.com/with/spencer-and-alex-combs",
+                "mealTitle": "Spencer and Alex Combs",
+                "city": 'New York, NY |',
+                "restaurant": "",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [0, -82.8627519]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/tumblr_mezlqgwokd1rqxuhno1_500-51ae8e8d73716.jpg",
+                "url": "http://www.beta.anymeal.com/with/laurent-sarlette",
+                "mealTitle": "Laurent Sarlette",
+                "city": 'Antarctica |',
+                "restaurant": "",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [-0.105360000000019, 51.53176]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/tumblr_md5575eed01rqxuhno1_500-51ae8eae40963.jpg",
+                "url": "http://www.beta.anymeal.com/with/robert-babar",
+                "mealTitle": "Robert Babar",
+                "city": 'Angel, London |',
+                "restaurant": "",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [-154.9508104, 19.4975033]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/tumblr_mciiurycc91rqxuhno1_500-51ae8ec36fe13.jpg",
+                "url": "http://www.beta.anymeal.com/with/jeannie-miskovich",
+                "mealTitle": "Jeannie Miskovich",
+                "city": 'Pāhoa, HI |',
+                "restaurant": "Satori",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [14.2188889, 36.0297222]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/tumblr_m8ynnlw2ta1rqxuhno1_500-51ae8eded6357.jpg",
+                "url": "http://www.beta.anymeal.com/with/arvid-bayev",
+                "mealTitle": "Arvid Bayev",
+                "city": 'Xlendi, Gozo Malta |',
+                "restaurant": "Rick's ",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [-0.11982439999997, 51.5112139]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/tumblr_m5664zkox41rqxuhno1_500-51ae8f1f7c4f1.jpg",
+                "url": "http://www.beta.anymeal.com/with/vicky",
+                "mealTitle": "Vicky",
+                "city": 'London, England |',
+                "restaurant": "",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [-73.9907908, 40.7365263]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/anymeal001-51ccde1689b9b.jpg",
+                "url": "http://www.beta.anymeal.com/with/noah-emrich",
+                "mealTitle": "Noah Emrich",
+                "city": 'New York, NY |',
+                "restaurant": "Jus",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [139.713075066933, 35.6697924675029]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/genta-anymeal-001-51ccdf3ae1658.jpg",
+                "url": "http://www.beta.anymeal.com/with/genta-narita",
+                "mealTitle": "Genta Narita",
+                "city": 'Tokyo, Japan |',
+                "restaurant": "Galali",
+            }
+        },
+
+        {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [-73.98916, 40.7376099]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/20130702-anymeal-jeffraider-ol-51e440886e076.jpg",
+                "url": "http://www.beta.anymeal.com/with/jeff-raider",
+                "mealTitle": "Jeff Raider",
+                "city": 'New York, NY |',
+                "restaurant": "Old Town Bar",
+            }
+        },
+
+            {
+            type: 'Feature',
+            "geometry": { "type": "Point", "coordinates": [-90.1140119, 43.189795]},
+            "properties": {
+                "image": "http://www.beta.anymeal.com/workspace//photos/20130607-anymeal-nickfay-0003-51e47ccf65e76.jpg",
+                "url": "http://www.beta.anymeal.com/with/nick-fay",
+                "mealTitle": "Nick Fay",
+                "city": 'Spring Green, WI |',
+                "restaurant": "Rumble Seats",
+            }
+
+        }];
+
+
+
+
+
+
+
+        // Add Meal Pins to the map
+        map.markerLayer.setGeoJSON(geoJson);
+
+        // Cycle through markers once geoJson is ready.
+        // Add custom popups to each using our custom feature properties
+        map.markerLayer.on('ready', function(e) {
+            this.eachLayer(function(marker) {
+
+                var feature = marker.feature;
+
+                // Create custom popup content
+                var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
+                                        '<img src="' + feature.properties.image + '" />' +
+                                    '   <h4 class="title">' + feature.properties.mealTitle + '</h4>' +
+                                    '   <span class="city">' + feature.properties.city + '</span>' +
+                                    '   <span class="city">' + feature.properties.restaurant + '</span>' +
+                                    '   <span>Read →</span>' +
+
+                                    '</a>';
+
+                // http://leafletjs.com/reference.html#popup
+                marker.bindPopup(popupContent,{
+                    closeButton: false,
+                    minWidth: 320
+                });
+
+            });
+        });
+
+      </script>
+  <script>
+        $(".no-touch .entry-list li").hover(function(){$(this).addClass("active")},function(){$(this).removeClass("active")});
+    </script>
+  <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='//www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    <script>
+
+
+  <script>
+    // Filter Toggle Drawer Magic
+    $('.toggleDrawer').on('click', function(e){
+    e.preventDefault();
+
+    var drawerMatch = $(this).attr('href');
+    var badMatch = $('.drawerContent:not('+drawerMatch+')');
+
+    if( badMatch.is(":visible") ){
+     badMatch.slideUp('slow', 'easeInBack').promise().done(function(){
+          $(drawerMatch).slideDown('fast', 'easeInOutSine');
+        });
+    }
+    else {
+     $(drawerMatch).slideToggle('fast', 'easeInOutSine');
+    }
+
+    });
+
+    // Toggle Selected Class
+    $(function () {
+      $('.title').click(function (evt) {
+          evt.stopPropagation(); //stops the document click action
+          $(this).siblings().removeClass('selected');
+          $(this).toggleClass('selected');
+      });
+
+
+      $(document).click(function () {
+          $('.title').removeClass('selected'); //make all inactive
+      });
+  });
+  </script>
+</script>
+</html>

@@ -12,7 +12,26 @@
 .content-wrap {
   background: $white;
   padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 
+body.map .content-wrap {
+	padding-bottom:0;
+}
+
+.light-wrap {
+	background: lighten($black, 96%);
+	padding: 40px 0 80px;
+}
+
+.dark-wrap {
+	background: lighten($dark-grey, 40%);
+	padding: 70px 0 80px;
+
+    @include breakpoint(tablet-V) {
+        padding: 42px 0 48px;
+    }
+}
 
 

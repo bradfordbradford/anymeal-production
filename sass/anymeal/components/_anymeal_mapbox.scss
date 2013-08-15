@@ -1,0 +1,82 @@
+
+
+
+
+
+
+// ---------------------
+// AnyMeal Map by Mapbox
+// ---------------------
+
+.view-all {
+	text-align:center;
+	padding: 12px 0 14px;
+	background: lighten($grey, 25%);
+	font-family: $sans-serif;
+
+	a {
+		font-family: $sans-serif;
+		display: inline-block;
+		padding: 4px 28px 7px 12px;
+		width: auto;
+		background: $grey;
+		margin: 0 4px 0;
+		color: $white;
+		font-size: emCalc(14px);
+		@include border-radius(20px);
+		@include transition(all, ease-in-out, .15s);
+		position: relative;
+
+		&:hover {
+			background: darken($grey, 20%);
+
+        }
+
+        &:after {
+        	content: 'x';
+        	font-family: $sans-serif;
+			font-size: emCalc(12px);
+			position: absolute;
+			right: 10px;
+			top: 4px;
+        }
+	}
+}
+
+#map {
+	position:relative;
+	top:0;
+	bottom:0;
+	height: 560px;
+	width:100%;
+
+	@include breakpoint(tablet-V) {
+		height: 300px;
+	}
+}
+
+// Popover
+.popup {
+	.title {
+		margin:10px 0 8px;
+		line-height: 16px;
+		font-size: 14px;
+	}
+	.city {
+		color: $black;
+	}
+
+}
+
+
+
+
+.leaflet-container img {
+  width: 100%;
+}
+
+.leaflet-popup-content {
+	margin:10px 14px;
+	text-align:center;
+	width: 160px !important;
+}
